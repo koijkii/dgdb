@@ -87,6 +87,7 @@ h1.logo
   color transparent
   -webkit-text-stroke 2px alpha(black, .5)
 
+  transition 1s background-size
   animation 30s anim-h1-logo ease-in-out infinite alternate
 
 @keyframes anim-h1-logo
@@ -94,6 +95,13 @@ h1.logo
     background-position-x 0
   100%
     background-position-x 100%
+
+h1.logo:hover
+  background-size 100% 100%
+  cursor pointer
+
+h1.logo a
+  color transparent
 
 p
   margin 0

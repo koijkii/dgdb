@@ -49,7 +49,15 @@ h1.logo {
   font: 50pt Orbitron;
   color: transparent;
   -webkit-text-stroke: 2px rgba(0,0,0,0.5);
+  transition: 1s background-size;
   animation: 30s anim-h1-logo ease-in-out infinite alternate;
+}
+h1.logo:hover {
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+h1.logo a {
+  color: transparent;
 }
 p {
   margin: 0;
