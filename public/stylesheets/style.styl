@@ -131,3 +131,31 @@ a
 
 a:hover
   color white
+
+@media all and (max-width: 700px)
+  body
+    height 1000px // Background gradient fix for mobile (Chrome at least)
+
+  div.header
+    position static
+
+  div.main
+    flex-direction column
+
+  div.nav
+    width 100%
+    min-height auto
+
+  div.nav div.fixed
+    position static
+    margin 0
+
+  div.content
+    margin-top 0
+
+  h1.logo
+    margin-top 0
+    padding-top 6px
+
+  img
+    image-rendering pixelated
