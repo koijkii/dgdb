@@ -1,5 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron')
+
+clr-bg-1 = rgb(30,40,50)
+clr-bg-2 = darken(clr-bg-1, 7%)
+
+clr-header-bg = lighten(clr-bg-1, 10%)
+
+clr-rainbow-1 = rgb(255,192,128)
+clr-rainbow-2 = rgb(255,128,192)
+clr-rainbow-3 = rgb(192,128,255)
+clr-rainbow-4 = rgb(128,192,255)
+clr-rainbow-5 = rgb(128,255,192)
+clr-rainbow-gradient = linear-gradient(90deg,
+  clr-rainbow-1,
+  clr-rainbow-2,
+  clr-rainbow-3,
+  clr-rainbow-4,
+  clr-rainbow-5
+)
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  margin 0
+
+  background repeating-linear-gradient(-10deg,
+    clr-bg-1,
+    clr-bg-1 10px,
+    clr-bg-2 10px,
+    clr-bg-2 20px
+  ) fixed
+
+div.header
+  height 75px
+  background linear-gradient(90deg, alpha(clr-header-bg, .8), transparent)
+
+h1
+  margin 0
+
+h1.logo
+  width 220px
+  margin-top -11px
+  margin-left 10px
+
+  background clr-rainbow-gradient
+  background-size 400% 100%
+  background-clip text
+  -webkit-background-clip text
+
+  font 50pt Orbitron
+  color transparent
+  -webkit-text-stroke 2px alpha(black, .5)
+
+  animation 30s anim-h1-logo ease-in-out infinite alternate
+
+@keyframes anim-h1-logo
+  0%
+    background-position-x 0
+  100%
+    background-position-x 100%
