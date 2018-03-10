@@ -4,6 +4,8 @@ clr-bg-1 = rgb(30,40,50)
 clr-bg-2 = darken(clr-bg-1, 7%)
 
 clr-header-bg = lighten(clr-bg-1, 10%)
+clr-nav-bg    = darken(clr-bg-2, 50%)
+clr-window-bg = alpha(white, .5)
 
 clr-rainbow-1 = rgb(255,192,128)
 clr-rainbow-2 = rgb(255,128,192)
@@ -18,6 +20,10 @@ clr-rainbow-gradient = linear-gradient(90deg,
   clr-rainbow-5
 )
 
+clr-link = darken(clr-rainbow-4, 65%)
+
+header-height = 64px
+
 body
   margin 0
 
@@ -28,9 +34,41 @@ body
     clr-bg-2 20px
   ) fixed
 
+div.fixed
+  position fixed
+  width inherit
+
 div.header
-  height 75px
+  position fixed
+  width 100%
+  height header-height
+
   background linear-gradient(90deg, alpha(clr-header-bg, .8), transparent)
+
+div.main
+  display flex
+
+div.nav
+  order 1
+
+  width 250px
+  min-height 100vh
+
+  background clr-nav-bg
+
+div.nav div.fixed
+  margin-top header-height + 15px
+
+div.content
+  order 2
+  margin-top header-height
+
+div.window
+  padding 5px
+  margin 15px
+
+  background clr-window-bg
+  box-shadow 5px 5px 0 alpha(black, .3)
 
 h1
   margin 0
@@ -56,3 +94,27 @@ h1.logo
     background-position-x 0
   100%
     background-position-x 100%
+
+p
+  margin 0
+  font 8pt Verdana
+
+p.nav a
+  display block
+
+  padding 5px
+  padding-left 23px
+
+  font-size 9pt
+  color clr-rainbow-4
+
+p.nav a:hover
+  background linear-gradient(alpha(black, .7), alpha(black, .3))
+  color white
+
+a
+  text-decoration none
+  color clr-link
+
+a:hover
+  color white

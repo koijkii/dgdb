@@ -3,9 +3,37 @@ body {
   margin: 0;
   background: repeating-linear-gradient(-10deg, #1e2832, #1e2832 10px, #1c252f 10px, #1c252f 20px) fixed;
 }
+div.fixed {
+  position: fixed;
+  width: inherit;
+}
 div.header {
-  height: 75px;
+  position: fixed;
+  width: 100%;
+  height: 64px;
   background: linear-gradient(90deg, rgba(46,61,77,0.8), transparent);
+}
+div.main {
+  display: flex;
+}
+div.nav {
+  order: 1;
+  width: 250px;
+  min-height: 100vh;
+  background: #0e1318;
+}
+div.nav div.fixed {
+  margin-top: 79px;
+}
+div.content {
+  order: 2;
+  margin-top: 64px;
+}
+div.window {
+  padding: 5px;
+  margin: 15px;
+  background: rgba(255,255,255,0.5);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
 }
 h1 {
   margin: 0;
@@ -22,6 +50,28 @@ h1.logo {
   color: transparent;
   -webkit-text-stroke: 2px rgba(0,0,0,0.5);
   animation: 30s anim-h1-logo ease-in-out infinite alternate;
+}
+p {
+  margin: 0;
+  font: 8pt Verdana;
+}
+p.nav a {
+  display: block;
+  padding: 5px;
+  padding-left: 23px;
+  font-size: 9pt;
+  color: #80c0ff;
+}
+p.nav a:hover {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #004486;
+}
+a:hover {
+  color: #fff;
 }
 @-moz-keyframes anim-h1-logo {
   0% {
